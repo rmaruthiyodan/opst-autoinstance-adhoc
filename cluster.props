@@ -1,0 +1,60 @@
+#######################  EDIT BELOW INFORMATION  #######################
+
+CLUSTERNAME=uniquename
+OS=centos6
+AMBARIVERSION=2.2.2.0
+NUM_OF_NODES=3
+DOMAIN_NAME=openstacklocal
+DEFAULT_PASSWORD=hadoop
+CLUSTER_VERSION=2.4.2.0
+FLAVOR_NAME=m1.large
+KEYPAIR_NAME=support-main
+PVT_KEYFILE=~/.ssh/support-main
+
+#Add your hostnames below ( without FQDN )
+
+HOST1=class-pr1
+HOST2=class-pr2
+HOST3=class-pr3
+
+#######################  EDIT BELOW INFORMATION ONLY IF YOU KNOW WHAT YOU ARE DOING!! :)  #######################
+
+HOST1_SERVICES="NAMENODE,NODEMANAGER,DATANODE,ZOOKEEPER_CLIENT,HDFS_CLIENT,YARN_CLIENT,MAPREDUCE2_CLIENT,ZOOKEEPER_SERVER,HBASE_REGIONSERVER,HBASE_CLIENT"
+HOST2_SERVICES="SECONDARY_NAMENODE,NODEMANAGER,DATANODE,ZOOKEEPER_CLIENT,ZOOKEEPER_SERVER,HDFS_CLIENT,YARN_CLIENT,MAPREDUCE2_CLIENT,HBASE_REGIONSERVER,HBASE_CLIENT,HBASE_MASTER"
+HOST3_SERVICES="RESOURCEMANAGER,APP_TIMELINE_SERVER,HISTORYSERVER,NODEMANAGER,DATANODE,ZOOKEEPER_CLIENT,ZOOKEEPER_SERVER,HDFS_CLIENT,YARN_CLIENT,MAPREDUCE2_CLIENT,HBASE_REGIONSERVER,HBASE_CLIENT"
+#######################  DO NOT EDIT BELOW INFORMATION!!  #######################
+
+## Available Ambari versions ##
+#Centos 7
+Ambari 2.1.0 / 2.1.1 / 2.1.2.1 / 2.1.2 / 2.2.0.0 / 2.2.1.0 / 2.2.2.0
+
+#Centos 6
+Ambari 1.7.0 / 2.0.0 / 2.0.1 / 2.0.2 / 2.1.0 / 2.1.1 / 2.1.2.1 / 2.1.2 / 2.2.0.0 / 2.2.1.0 / 2.2.1.1 / 2.2.2.0
+
+## Available HDP versions ##
+#Centos 7
+
+HDP_2.4_BASE_URL="http://172.26.64.249/hdp/centos7/HDP-2.4.2.0/"
+HDP_2.4_BASE_URL="http://172.26.64.249/hdp/centos7/HDP-2.4.0.0/"
+HDP_2.3_BASE_URL="http://172.26.64.249/hdp/centos7/HDP-2.3.4.0/"
+HDP_2.3_BASE_URL="http://172.26.64.249/hdp/centos7/HDP-2.3.2.0/"
+HDP_2.3_BASE_URL="http://172.26.64.249/hdp/centos7/HDP-2.3.0.0/"
+
+#Centos 6
+HDP_2.4_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.4.2.0/"
+HDP_2.4_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.4.0.0/"
+HDP_2.3_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.3.6.0/"
+HDP_2.3_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.3.4.7/"
+HDP_2.3_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.3.4.0/"
+HDP_2.3_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.3.2.0/"
+HDP_2.3_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.3.0.0/"
+HDP_2.2_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.2.9.0/"
+HDP_2.2_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.2.8.0/"
+HDP_2.2_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.2.6.0/"
+HDP_2.2_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.2.4.8/"
+HDP_2.2_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.2.4.2/"
+HDP_2.2_BASE_URL="http://172.26.64.249/hdp/centos6/HDP-2.2.0.0/"
+
+#HDP Utils
+HDP_UTILS_URL="http://172.26.64.249/hdp/centos7/HDP-UTILS-1.1.0.20/"
+HDP_UTILS_URL="http://172.26.64.249/hdp/centos6/HDP-UTILS-1.1.0.20/"
