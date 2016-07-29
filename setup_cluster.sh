@@ -65,10 +65,10 @@ __check_ambari_server_portstatus() {
 check_sshd_service() {
         loop=0
 	echo $1
-        nc $1 22 > /dev/null
+        nc -w 2 $1 22 > /dev/null
         while [ $? -eq 1 ]
         do
-                echo "Sleeping for 10 seconds while waiting for initialization..."
+                echo "SSHD is not responding on $1. Sleeping for 10 seconds..."
                 sleep 10
                 loop=$(( $loop + 1 ))
                 if [ $loop -eq 10 ]
@@ -81,7 +81,7 @@ check_sshd_service() {
                         fi
                 fi
 
-                nc $1 22 > /dev/null
+                nc -w 2 $1 22 > /dev/null
         done
 }
 
