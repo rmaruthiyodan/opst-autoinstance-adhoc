@@ -87,13 +87,13 @@ check_vm_state()
 			if [ "$?" -ne 0 ]
 			then
 				vm_info=`nova show $HOST | egrep "vm_state|PROVIDER_NET network"`
-			echo $HOST ":" $vm_info
+				#echo $HOST ":" $vm_info
 				echo $vm_info | grep -q -w 'active'
 				if [ "$?" -ne 0 ]
 				then
 					STARTUP_STATE=0
-					echo "The VM ($HOST) are still starting. Sleeping 5 ses..."
-					sleep 2
+					echo "The VM ($HOST) is still in State [`echo $vm_info | awk -F '|' '{print $3}'`]. Sleeping for 5s..."
+					sleep 5
 					continue
 				fi
 			else
@@ -101,7 +101,7 @@ check_vm_state()
 				break
 			fi
 			IP=`echo $vm_info | awk -F'|' '{print $6}' | xargs`
-			echo $IP  $HOST $HOST.$DOMAIN_NAME >> /tmp/hosts
+			echo $IP  $HOST.$DOMAIN_NAME $HOST >> /tmp/hosts
 			STARTUP_STATE=1
 			STARTED_VMS=$STARTED_VMS:$HOST
 			echo "$HOST Ok"
